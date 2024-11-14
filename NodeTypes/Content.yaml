@@ -1,0 +1,104 @@
+'Neos.NodeTypes:Text':
+  properties:
+    text:
+      search:
+        zinc:
+          mappingType: 'text'
+          fulltextValue: ${node.properties.text}
+      ui:
+        inline:
+          editorOptions:
+            linking:
+              anchorLink: true
+            formatting:
+              strong: true
+              em: true
+              u: true
+              sub: true
+              sup: true
+              p: true
+              h1: true
+              h2: true
+              h3: true
+              h4: true
+              h5: false
+              h6: false
+              code: false
+              removeFormat: true
+              table: true
+              a: true
+              ul: true
+              ol: true
+              left: true
+              center: true
+              right: true
+              justify: true
+'Neos.NodeTypes:Headline':
+  ui:
+    inspector:
+      groups:
+        general:
+          label: General
+          icon: icon-wrench
+          position: 1  
+  properties:
+    anchor:
+      type: string
+      ui:
+        label: Anker-ID
+        reloadIfChanged: true
+        inspector:
+          group: general
+    title:
+      ui:
+        inline:
+          editorOptions:
+            linking:
+              anchorLink: true
+            formatting:
+              strong: true
+              h1: true
+              h2: true
+              h3: true
+              h4: true
+              h5: true
+              h6: false
+              removeFormat: true
+              sub: true
+              sup: true
+              a: true
+              left: true
+              center: true
+              right: true
+              justify: true
+'Neos.NodeTypes:TextWithImage':
+  properties:
+    text:
+      ui:
+        inline:
+          editorOptions:
+            linking:
+              anchorLink: true
+            formatting:
+              strong: true
+              em: true
+              u: true
+              sub: true
+              sup: true
+              p: true
+              h1: true
+              h2: true
+              h3: true
+              h4: true
+              h5: true
+              h6: false
+              code: false
+              removeFormat: true
+              table: true
+              a: true
+              ul: true
+              ol: true
+              left: true
+              center: true
+              right: true
+              justify: true

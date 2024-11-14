@@ -1,0 +1,15 @@
+##
+# "Accordion" element
+#
+prototype(ISP.Skeleton:Accordion) < prototype(Neos.Neos:ContentComponent) {
+
+    renderer = afx`
+        <ISP.Skeleton:Integration.Accordion />
+    `
+}
+prototype(ISP.Skeleton:AccordionItem) < prototype(Neos.Neos:ContentComponent) {
+
+    renderer = afx`
+        <ISP.Skeleton:Integration.AccordionItem />
+    `
+}

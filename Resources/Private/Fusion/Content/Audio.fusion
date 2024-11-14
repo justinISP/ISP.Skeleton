@@ -1,0 +1,16 @@
+prototype(ISP.Skeleton:Audio) < prototype(Neos.Neos:ContentComponent) {
+  
+    audio = ${q(node).property('audio').resource}
+  
+    renderer = afx`
+
+    <audio width="100%" controls>
+        <source type="audio/mpeg" @children="attributes.src">
+            <Neos.Fusion:ResourceUri resource={props.audio} />
+        </source>        
+        Ihr Browser unterstützt die Wiedergabe des Media-Players nicht. Um die Inhalte anzuhören, wechseln Sie bitte Ihren Browser.
+    </audio>
+
+    `
+  
+  }

@@ -1,0 +1,10 @@
+prototype(Neos.NodeTypes:Headline) < prototype(Neos.Neos:ContentComponent) {
+
+    anchor = ${q(node).property('anchor')}
+
+    renderer = afx`
+      <div {...props.attributes} id={props.anchor}>
+        {props.title}
+      </div>
+    `
+  }

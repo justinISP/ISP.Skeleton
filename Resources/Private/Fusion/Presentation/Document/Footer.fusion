@@ -1,0 +1,22 @@
+prototype(ISP.Skeleton:Presentation.Footer) < prototype(Neos.Neos:ContentComponent) {
+
+    renderer = afx`
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row" style="mix-blend-mode: difference;">
+                {props.content}
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p style="mix-blend-mode: difference;" class="copyright-text mb-0"><Neos.Neos:Editable property='cr' /></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>    
+    `
+}

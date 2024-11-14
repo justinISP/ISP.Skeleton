@@ -1,0 +1,24 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "isp/skeleton",
+    "require": {
+        "neos/flow": "*",
+        "neos/nodetypes-assetlist": "*",
+        "neos/nodetypes-basemixins": "*",
+        "neos/nodetypes-contentreferences": "*",
+        "neos/nodetypes-html": "*",
+        "neos/nodetypes-navigation": "*",
+        "neos/nodetypes": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ISP\\Skeleton\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "ISP.Skeleton"
+        }
+    }
+}

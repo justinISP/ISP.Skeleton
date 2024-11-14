@@ -1,0 +1,11 @@
+'ISP.Skeleton:Carousel':
+  superTypes:
+    'Neos.Neos:Content': true
+  childNodes:
+    carouselItems:
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    label: Slider / Carousel (skeleton)
+    group: plugins
+    icon: icon-picture
+    inlineEditable: true

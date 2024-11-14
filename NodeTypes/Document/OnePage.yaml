@@ -1,0 +1,61 @@
+'ISP.Skeleton:Document.OnePage':
+  superTypes:
+    'Neos.Neos:Site': true
+    'ISP.Skeleton:Document.AbstractPage': true
+  constraints:
+    nodeTypes:
+      '*': false
+      'Neos.Neos:Shortcut': true
+  ui:
+    icon: file
+    label: 'OnePage (skeleton)'
+    inspector:
+      groups:
+        colors:
+          label: Farben
+          icon: 'icon-palette'
+          position: 1100
+          collapsed: true
+        logo:
+          label: Logo
+          icon: 'icon-image'
+          position: 1200
+          collapsed: true    
+  properties:
+    logo:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Logo
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'logo'
+          position: 0               
+    topColor:
+      type: string
+      ui:
+        showInCreationDialog: true    
+        reloadIfChanged: true  
+        label: 'Farbwahl'
+        inspector:
+          group: 'colors'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              peach:
+                label: 'Peach Fuzz'
+                icon: 'resource://ISP.Skeleton/Icons/peach.svg'
+              lavender:
+                label: 'Lavender Haze'
+                icon: 'resource://ISP.Skeleton/Icons/lavender.svg'
+              coral:
+                label: 'Color Me Coral'
+                icon: 'resource://ISP.Skeleton/Icons/coral.svg'
+              blue:
+                label: 'Blue Nova'
+                icon: 'resource://ISP.Skeleton/Icons/blue.svg'
+              spring:
+                label: 'Spring Forward'
+                icon: 'resource://ISP.Skeleton/Icons/spring.svg'
+              pink:
+                label: 'Millennial Pink'
+                icon: 'resource://ISP.Skeleton/Icons/pink.svg'

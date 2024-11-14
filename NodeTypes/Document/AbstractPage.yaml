@@ -1,0 +1,77 @@
+# This is a custom document node type which has been auto-generated for your site package
+# by Neos. You can customize this to your needs.
+'ISP.Skeleton:Document.AbstractPage':
+  abstract: true
+  superTypes:
+    'Neos.Neos:Document': true
+  ui:
+    icon: file
+  childNodes:
+    'header':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'Neos.NodeTypes:Text': TRUE  
+    'slider':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'ISP.Skeleton:Carousel': TRUE
+          'Neos.NodeTypes:Image': TRUE
+          'Neos.NodeTypes:TextWithImage': TRUE
+    'main':
+      type: 'Neos.Neos:ContentCollection'
+    'content':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+    'content2':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+    'footer':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'Neos.NodeTypes:Headline': TRUE
+          'Neos.NodeTypes:Text': TRUE
+          'Neos.NodeTypes:Image': TRUE
+          'Neos.NodeTypes.ColumnLayouts:TwoColumn': TRUE
+          'Neos.NodeTypes.ColumnLayouts:ThreeColumn': TRUE
+  properties:
+    cr:
+      type: string
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Copyright © 2024 • Lorem Ipsum'
+            formatting:
+              strong: true
+              em: false
+              sub: false
+              sup: false
+              p: true
+              h1: false
+              h2: false
+              h3: false
+              h4: false
+              h5: false
+              h6: false
+              pre: false
+              underline: false
+              strikethrough: false
+              removeFormat: false
+              left: false
+              right: false
+              center: false
+              justify: false
+              table: false
+              ol: false
+              ul: false
+              a: true 

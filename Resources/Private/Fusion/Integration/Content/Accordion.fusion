@@ -1,0 +1,36 @@
+prototype(ISP.Skeleton:Integration.Accordion) < prototype(Neos.Fusion:Renderer) {
+    renderPath = '/container'
+}
+prototype(ISP.Skeleton:Integration.AccordionItem) < prototype(Neos.Fusion:Renderer) {
+    renderPath = '/item'
+}
+
+prototype(ISP.Skeleton:Integration.Accordion.Renderer) < prototype(ISP.Skeleton:Presentation.Accordion) {
+
+    id = ${node.aggregateId}
+
+    accordionItems = Neos.Neos:ContentCollection
+    accordionItems {
+        nodePath = 'items'
+    }
+}
+
+prototype(ISP.Skeleton:Integration.AccordionItem.Renderer) < prototype(ISP.Skeleton:Presentation.AccordionItem) {
+
+    id = ${node.aggregateId}
+
+    title = Neos.Neos:Editable {
+        property = 'title'
+    }
+    teaser = Neos.Neos:Editable {
+        property = 'teaser'
+    }
+
+    contentContainer = Neos.Neos:ContentCollection
+    contentContainer {
+        nodePath = 'content'
+    }
+}
+
+container = ISP.Skeleton:Integration.Accordion.Renderer
+item = ISP.Skeleton:Integration.AccordionItem.Renderer

@@ -1,0 +1,17 @@
+prototype(ISP.Skeleton:Integration.Footer) < prototype(Neos.Fusion:Renderer) {
+    renderPath = '/footer'
+}
+
+prototype(ISP.Skeleton:Integration.Footer.Renderer) < prototype(ISP.Skeleton:Presentation.Footer) {
+
+    content = Neos.Neos:ContentCollection {
+        @context.node = ${q(site).children('footer').get(0)}
+        attributes.class = 'content'
+    }
+
+    cr = Neos.Neos:Editable {
+        property = 'cr'
+    }
+}
+
+footer = ISP.Skeleton:Integration.Footer.Renderer

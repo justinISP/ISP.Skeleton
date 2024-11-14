@@ -1,0 +1,14 @@
+prototype(ISP.Skeleton:Integration.Header) < prototype(Neos.Fusion:Renderer) {
+    renderPath = '/header'
+}
+
+prototype(ISP.Skeleton:Integration.Header.Renderer) < prototype(ISP.Skeleton:Presentation.Header) {
+
+    content = Neos.Neos:ContentCollection {
+        @context.node = ${q(site).children('header').get(0)}
+        attributes.class = 'content'
+    }
+    
+}
+
+header = ISP.Skeleton:Integration.Header.Renderer

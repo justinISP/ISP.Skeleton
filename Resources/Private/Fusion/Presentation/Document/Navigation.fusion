@@ -1,0 +1,10 @@
+prototype(ISP.Skeleton:Presentation.Navigation) < prototype(Neos.Fusion:Component) {
+
+    renderer = afx`
+    <ul class="navbar-nav ms-auto">
+        <Neos.Fusion:Loop items={props.menuItems}>
+            <a href={item.uri} class="nav-link">{item.label}</a>
+        </Neos.Fusion:Loop>
+    </ul> 
+    `
+}

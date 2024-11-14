@@ -1,0 +1,5 @@
+'ISP.Skeleton:Document.Page':
+  superTypes:
+    'ISP.Skeleton:Document.AbstractPage': true
+  ui:
+    label: 'Page (skeleton)'

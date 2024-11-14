@@ -1,0 +1,23 @@
+'ISP.Skeleton:Video':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Video
+    group: general
+    position: 820
+    inlineEditable: true
+    inspector:
+      groups:
+        media:
+          label: Media
+          icon: icon-picture
+          position: 1
+  properties:
+    video:
+      type: Neos\Media\Domain\Model\Asset
+      ui:
+        label: Video-Upload
+        reloadIfChanged: true
+        showInCreationDialog: true 
+        inspector:
+          group: media

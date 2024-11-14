@@ -1,0 +1,102 @@
+prototype(ISP.Skeleton:Document.AbstractPage) < prototype(Neos.Neos:Page) {
+
+    head.stylesheets = afx`
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="format-detection" content="telephone=yes" />
+        <link rel="stylesheet" type="text/css" @children="attributes.href">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/bootstrap.min.css" />
+        </link>
+        <link rel="stylesheet" type="text/css" @children="attributes.href">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/bootstrap-icons.min.css" />
+        </link>
+        <link rel="stylesheet" type="text/css" @children="attributes.href">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/slick.min.css" />
+        </link>
+        <link rel="stylesheet" type="text/css" @children="attributes.href">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/slick-theme.min.css" />
+        </link> 
+
+    `
+
+    body = afx`
+        <ISP.Skeleton:Integration.Header />
+
+        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img alt="Dummy-Logo" title="Home" @children="attributes.src">
+                        <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Images/logo_dummy.png" />
+                    </img>
+                </a>
+    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ISP.Skeleton:Integration.Navigation /> 
+                </div>
+            </div>
+        </nav>
+
+        <main>
+
+            <section class="hero-section hero-section-full-height">
+                <div class="container-fluid">
+                    <div class="row">
+                        <Neos.Neos:ContentCollection nodePath='slider' />
+                    </div>
+                </div>
+            </section>
+    
+            <section class="section-padding">
+                <div class="container">
+                    <div class="row">
+                        <Neos.Neos:ContentCollection nodePath='main' />
+                    </div>
+                </div>
+            </section>
+    
+            <section class="section-padding" id="section_2">
+                <div class="container">
+                    <div class="row">
+                        <Neos.Neos:ContentCollection nodePath='content' />
+                    </div>
+                </div>
+            </section>
+    
+            <section class="about-section section-padding">
+                <div class="container">
+                    <div class="row">
+                        <Neos.Neos:ContentCollection nodePath='content2' />
+                    </div>
+                </div>
+            </section>             
+    
+        </main>   
+        <ISP.Skeleton:Integration.Footer />
+    `
+
+    body.bodyScripts = afx`
+
+    <script type="text/javascript"  @children="attributes.src">
+        <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/jquery-3.7.1.min.js" />
+    </script>
+    <script type="text/javascript"  @children="attributes.src">
+        <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/bootstrap.min.js" />
+    </script>
+    <script type="text/javascript"  @children="attributes.src">
+        <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/jquery.sticky.js" />
+    </script>
+    <script type="text/javascript"  @children="attributes.src">
+        <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/slick.min.js" />
+    </script>
+    <script type="text/javascript"  @children="attributes.src">
+        <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/slider.js" />
+    </script>
+    
+`  
+
+}

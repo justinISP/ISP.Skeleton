@@ -1,0 +1,34 @@
+'ISP.Skeleton:Accordion':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Accordion (skeleton)'
+    group: structure
+    icon: icon-list
+    inlineEditable: true
+  childNodes:
+    items:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'ISP.Skeleton:AccordionItem': TRUE
+'ISP.Skeleton:AccordionItem':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Accordion Item (skeleton)'
+    group: structure
+    icon: icon-file-text
+    inlineEditable: true
+  childNodes:
+    content:
+      type: 'Neos.Neos:ContentCollection'
+  properties:
+    title:
+      type: string
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Titel hier eintragen'

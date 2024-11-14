@@ -1,0 +1,15 @@
+prototype(ISP.Skeleton:Video) < prototype(Neos.Neos:ContentComponent) {
+
+    video = ${q(node).property('video').resource}
+  
+    renderer = afx`
+
+    <video width="100%" controls>
+        <source type="video/mp4" @children="attributes.src">
+            <Neos.Fusion:ResourceUri resource={props.video} />
+        </source>   
+        Ihr Browser unterstützt die Wiedergabe des Media-Players nicht. Um die Inhalte abzuspielen, wechseln Sie bitte Ihren Browser.
+    </video>
+
+    `
+  }

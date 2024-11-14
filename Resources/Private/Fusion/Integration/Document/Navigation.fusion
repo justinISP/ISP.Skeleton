@@ -1,0 +1,19 @@
+prototype(ISP.Skeleton:Integration.Navigation) < prototype(Neos.Fusion:Renderer) {
+    renderPath = '/nav'
+}
+
+prototype(ISP.Skeleton:Integration.Navigation.Renderer) < prototype(ISP.Skeleton:Presentation.Navigation) {
+
+    menuItems = Neos.Fusion:Map {
+        items = ${q(site).find('[instanceof Neos.Neos:Document]')}
+        itemRenderer = Neos.Fusion:DataStructure {
+            label = ${q(item).property('title')}
+            uri = Neos.Neos:NodeUri {
+                node = ${item}
+            }
+        }
+    }
+    
+}
+
+nav = ISP.Skeleton:Integration.Navigation.Renderer

@@ -1,0 +1,23 @@
+prototype(ISP.Skeleton:Presentation.Accordion) < prototype(Neos.Fusion:Component) {
+
+    renderer = afx`
+    <div class="accordionFrame" id={props.id}>
+        {props.accordionItems}
+    </div>
+    `
+}
+prototype(ISP.Skeleton:Presentation.AccordionItem) < prototype(Neos.Fusion:Component) {
+
+    renderer = afx`
+    <div class="accordion-group">
+        <button class="accordion accordion-heading">
+            <div class="accordion-headline"><Neos.Neos:Editable property="title" /></div>
+        </button>
+        <div id={'accordion-' + props.id} class="panel">
+            <div class="accordion-inner">
+                {props.contentContainer}
+            </div>
+        </div>
+    </div>
+    `
+}

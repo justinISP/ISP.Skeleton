@@ -1,0 +1,25 @@
+'ISP.Skeleton:Audio':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Audio
+    icon: icon-music
+    group: general
+    position: 21
+    inspector:
+      groups:
+        media:
+          label: Medien
+          icon: icon-picture
+          position: 1
+  properties:
+    audio:
+      type: Neos\Media\Domain\Model\Asset
+      ui:
+        label: Audio-Upload
+        reloadIfChanged: TRUE
+        showInCreationDialog: true 
+        inspector:
+          group: 'media'
+      constraints:
+        mediaTypes: ['application/mp3', 'application/wav']
