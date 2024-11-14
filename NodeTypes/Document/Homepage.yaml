@@ -2,7 +2,6 @@
 # by Neos. You can customize this to your needs.
 'ISP.Skeleton:Document.Homepage':
   superTypes:
-    'Neos.Neos:Site': true
     'ISP.Skeleton:Document.AbstractPage': true
   ui:
     icon: globe
