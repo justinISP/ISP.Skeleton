@@ -9,7 +9,8 @@
         "neos/nodetypes-contentreferences": "*",
         "neos/nodetypes-html": "*",
         "neos/nodetypes-navigation": "*",
-        "neos/nodetypes": "*"
+        "neos/nodetypes": "*",
+        "matthiasmullie/minify": "^1.3"
     },
     "autoload": {
         "psr-4": {

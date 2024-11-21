@@ -1,0 +1,21 @@
+prototype(ISP.Skeleton:CSS) < prototype(Neos.Fusion:Renderer) {
+    renderPath = '/css'
+}
+
+prototype(ISP.Skeleton:CSS.Renderer) < prototype(ISP.Skeleton:Presentation.CSS) {
+
+    renderer = ${'<style>' + ISP.Skeleton.Minify.minifyCSS(props.styles) + '</style>'}
+
+#    @cache {
+#        mode = 'cached'
+#        entryIdentifier {
+#            static = 'footer'
+#            site = ${site}
+#        }
+#        entryTags {
+#            1 = ${Neos.Caching.nodeTypeTag('Neos.Neos:Document', site)}
+#        }
+#    }
+}
+
+css = ISP.Skeleton:CSS.Renderer

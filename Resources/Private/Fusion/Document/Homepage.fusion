@@ -1,1 +1,1 @@
-prototype(ISP.Skeleton:Document.Page) < prototype(ISP.Skeleton:Document.AbstractPage)
+prototype(ISP.Skeleton:Document.Homepage) < prototype(ISP.Skeleton:Document.AbstractPage)

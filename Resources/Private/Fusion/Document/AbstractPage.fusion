@@ -17,8 +17,16 @@ prototype(ISP.Skeleton:Document.AbstractPage) < prototype(Neos.Neos:Page) {
         <link rel="stylesheet" type="text/css" @children="attributes.href">
             <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/slick-theme.min.css" />
         </link> 
-
+        <ISP.Skeleton:CSS />
     `
+
+    body = Neos.Fusion:Join {
+        @position = 'after bodyTag'
+    
+        # Scripts before the closing body tag
+        javascripts = Neos.Fusion:Join
+        javascripts.@position = 'end 100'
+    }
 
     body = afx`
         <ISP.Skeleton:Integration.Header />
