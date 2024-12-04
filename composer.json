@@ -10,7 +10,8 @@
         "neos/nodetypes-html": "*",
         "neos/nodetypes-navigation": "*",
         "neos/nodetypes": "*",
-        "matthiasmullie/minify": "^1.3"
+        "matthiasmullie/minify": "*",
+        "sitegeist/slipstream": "*"
     },
     "autoload": {
         "psr-4": {
