@@ -1,0 +1,7 @@
+prototype(ISP.Skeleton:Integration.About) < prototype(Neos.Fusion:Renderer) {
+    renderPath = '/about'
+}
+
+prototype(ISP.Skeleton:Integration.About.Renderer) < prototype(ISP.Skeleton:Presentation.About)
+
+about = ISP.Skeleton:Integration.About.Renderer

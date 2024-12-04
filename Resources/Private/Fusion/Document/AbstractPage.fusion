@@ -29,62 +29,19 @@ prototype(ISP.Skeleton:Document.AbstractPage) < prototype(Neos.Neos:Page) {
     }
 
     body = afx`
+    
         <ISP.Skeleton:Integration.Header />
-
-        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                    <img alt="Dummy-Logo" title="Home" @children="attributes.src">
-                        <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Images/logo_dummy.png" />
-                    </img>
-                </a>
-    
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ISP.Skeleton:Integration.Navigation /> 
-                </div>
-            </div>
-        </nav>
+        <ISP.Skeleton:Integration.Navbar />
 
         <main>
-
-            <section class="hero-section hero-section-full-height">
-                <div class="container-fluid">
-                    <div class="row">
-                        <Neos.Neos:ContentCollection nodePath='slider' />
-                    </div>
-                </div>
-            </section>
-    
-            <section class="section-padding">
-                <div class="container">
-                    <div class="row">
-                        <Neos.Neos:ContentCollection nodePath='main' />
-                    </div>
-                </div>
-            </section>
-    
-            <section class="section-padding" id="section_2">
-                <div class="container">
-                    <div class="row">
-                        <Neos.Neos:ContentCollection nodePath='content' />
-                    </div>
-                </div>
-            </section>
-    
-            <section class="about-section section-padding">
-                <div class="container">
-                    <div class="row">
-                        <Neos.Neos:ContentCollection nodePath='content2' />
-                    </div>
-                </div>
-            </section>             
-    
+            <ISP.Skeleton:Integration.Hero />
+            <ISP.Skeleton:Integration.Main />
+            <ISP.Skeleton:Integration.Content />
+            <ISP.Skeleton:Integration.About />
         </main>   
+
         <ISP.Skeleton:Integration.Footer />
+
     `
 
     body.bodyScripts = afx`

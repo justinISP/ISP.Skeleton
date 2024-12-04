@@ -1,0 +1,65 @@
+prototype(ISP.Skeleton:Presentation.Footer) < prototype(Neos.Neos:ContentComponent) {
+    
+    integration = ${'<style data-slipstream>' + ISP.Skeleton.Minify.minifyCSS(this.styles) + '</style>'}
+    
+    styles = '
+    
+        .site-footer {
+            background-color: var(--site-footer-bg-color);
+            padding-top: 70px;
+        }
+
+        .site-footer-bottom {
+            background-color:var(--secondary-color);
+            position:relative;
+            z-index:2;
+            margin-top:70px;
+            padding-top:25px;
+            padding-bottom:25px
+        }
+
+        .site-footer-bottom a {
+            color: var(--white-color);
+        }
+
+        .site-footer-link {
+            color: var(--white-color);
+        }
+
+        .copyright-text {
+            color: var(--section-bg-color);
+            font-size: var(--copyright-font-size);
+            margin-right: 30px;
+        }
+
+        .site-footer .custom-btn {
+            font-size: var(--copyright-font-size);
+        }
+
+        .site-footer .custom-btn:hover {
+            background: var(--primary-color);
+        }
+
+    '
+
+    renderer = afx`
+        {props.integration}
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row" style="mix-blend-mode: difference;">
+                {props.content}
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="copyright-text mb-0"><Neos.Neos:Editable property='cr' /></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>    
+    `
+}

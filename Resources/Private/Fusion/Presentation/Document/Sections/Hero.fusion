@@ -1,0 +1,30 @@
+prototype(ISP.Skeleton:Presentation.Hero) < prototype(Neos.Neos:ContentComponent) {
+    
+    integration = ${'<style data-slipstream>' + ISP.Skeleton.Minify.minifyCSS(this.styles) + '</style>'}
+    
+    styles = '
+    
+        .hero-section-full-height {
+            /* height: 600px;
+            min-height: 600px; */
+            position: relative;
+        }
+        .hero-section .row > * {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+    '
+
+    renderer = afx`
+        {props.integration}
+        <section class="hero-section hero-section-full-height">
+            <div class="container-fluid">
+                <div class="row">
+                    <Neos.Neos:ContentCollection nodePath='slider' />
+                </div>
+            </div>
+        </section>
+
+    `
+}

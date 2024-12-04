@@ -1,0 +1,7 @@
+prototype(ISP.Skeleton:Integration.Navbar) < prototype(Neos.Fusion:Renderer) {
+    renderPath = '/navbar'
+}
+
+prototype(ISP.Skeleton:Integration.Navbar.Renderer) < prototype(ISP.Skeleton:Presentation.Navbar)
+
+navbar = ISP.Skeleton:Integration.Navbar.Renderer

@@ -1,0 +1,14 @@
+prototype(ISP.Skeleton:Presentation.Main) < prototype(Neos.Neos:ContentComponent) {
+
+    renderer = afx`
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <Neos.Neos:ContentCollection nodePath='main' />
+                </div>
+            </div>
+        </section>
+
+    `
+}

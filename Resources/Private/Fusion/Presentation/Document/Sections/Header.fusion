@@ -1,6 +1,21 @@
 prototype(ISP.Skeleton:Presentation.Header) < prototype(Neos.Fusion:Component) {
+    
+    integration = ${'<style data-slipstream>' + ISP.Skeleton.Minify.minifyCSS(this.styles) + '</style>'}
+    
+    styles = '
+    
+    .site-header{
+    
+        background: var(--primary-color); 
+        padding-top: 15px; 
+        padding-bottom: 10px;
+    
+    }
+
+    '
 
     renderer = afx`
+        {props.integration}
     <header class="site-header">
         <div class="container">
             <div class="row">

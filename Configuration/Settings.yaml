@@ -3,3 +3,6 @@ Neos:
     fusion:
       autoInclude:
         'ISP.Skeleton': true
+  Fusion:
+    defaultContext:
+      'ISP.Skeleton.Minify': 'ISP\Skeleton\EelHelper\MinifyHelper'

@@ -1,5 +1,0 @@
-prototype(ISP.Skeleton:Presentation.CSS) < prototype(Neos.Neos:ContentComponent) {
-
-    styles = ''
-
-}    

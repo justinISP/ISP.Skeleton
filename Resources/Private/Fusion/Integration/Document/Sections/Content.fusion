@@ -1,0 +1,7 @@
+prototype(ISP.Skeleton:Integration.Content) < prototype(Neos.Fusion:Renderer) {
+    renderPath = '/content'
+}
+
+prototype(ISP.Skeleton:Integration.Content.Renderer) < prototype(ISP.Skeleton:Presentation.Content)
+
+content = ISP.Skeleton:Integration.Content.Renderer

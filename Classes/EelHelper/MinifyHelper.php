@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace ISP\Skeleton\Eel\Helper;
+namespace ISP\Skeleton\EelHelper;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Eel\ProtectedContextAwareInterface;

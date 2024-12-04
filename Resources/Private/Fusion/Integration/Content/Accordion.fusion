@@ -9,8 +9,7 @@ prototype(ISP.Skeleton:Integration.Accordion.Renderer) < prototype(ISP.Skeleton:
 
     id = ${node.aggregateId}
 
-    accordionItems = Neos.Neos:ContentCollection
-    accordionItems {
+    accordionItems = Neos.Neos:ContentCollection {
         nodePath = 'items'
     }
 }
@@ -26,8 +25,7 @@ prototype(ISP.Skeleton:Integration.AccordionItem.Renderer) < prototype(ISP.Skele
         property = 'teaser'
     }
 
-    contentContainer = Neos.Neos:ContentCollection
-    contentContainer {
+    contentContainer = Neos.Neos:ContentCollection {
         nodePath = 'content'
     }
 }

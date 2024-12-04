@@ -1,0 +1,26 @@
+prototype(ISP.Skeleton:Presentation.About) < prototype(Neos.Neos:ContentComponent) {
+
+    integration = ${'<style data-slipstream>' + ISP.Skeleton.Minify.minifyCSS(this.styles) + '</style>'}
+    
+    styles = '
+    
+        .about-section {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+    '
+
+    renderer = afx`
+        {props.integration}
+        <section class="about-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <Neos.Neos:ContentCollection nodePath='content2' />
+                </div>
+            </div>
+        </section>  
+
+    `
+}
