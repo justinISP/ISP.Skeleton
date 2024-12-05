@@ -1,5 +1,5 @@
 prototype(ISP.Skeleton:Integration.Navigation) < prototype(Neos.Fusion:Renderer) {
-    renderPath = '/nav'
+    renderPath = '/skeletonNav'
 }
 
 prototype(ISP.Skeleton:Integration.Navigation.Renderer) < prototype(ISP.Skeleton:Presentation.Navigation) {
@@ -16,4 +16,4 @@ prototype(ISP.Skeleton:Integration.Navigation.Renderer) < prototype(ISP.Skeleton
     
 }
 
-nav = ISP.Skeleton:Integration.Navigation.Renderer
+skeletonNav = ISP.Skeleton:Integration.Navigation.Renderer

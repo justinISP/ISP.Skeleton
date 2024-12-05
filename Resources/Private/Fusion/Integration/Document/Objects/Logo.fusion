@@ -1,5 +1,5 @@
 prototype(ISP.Skeleton:Integration.Logo) < prototype(Neos.Fusion:Renderer) {
-    renderPath = '/logo'
+    renderPath = '/skeletonLogo'
 }
 
 prototype(ISP.Skeleton:Integration.Logo.Renderer) < prototype(ISP.Skeleton:Presentation.Logo) {
@@ -12,4 +12,4 @@ prototype(ISP.Skeleton:Integration.Logo.Renderer) < prototype(ISP.Skeleton:Prese
 
 }
 
-logo = ISP.Skeleton:Integration.Logo.Renderer
+skeletonLogo = ISP.Skeleton:Integration.Logo.Renderer

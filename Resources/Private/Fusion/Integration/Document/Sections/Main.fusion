@@ -1,7 +1,7 @@
 prototype(ISP.Skeleton:Integration.Main) < prototype(Neos.Fusion:Renderer) {
-    renderPath = '/main'
+    renderPath = '/skeletonMain'
 }
 
 prototype(ISP.Skeleton:Integration.Main.Renderer) < prototype(ISP.Skeleton:Presentation.Main)
 
-main = ISP.Skeleton:Integration.Main.Renderer
+skeletonMain = ISP.Skeleton:Integration.Main.Renderer

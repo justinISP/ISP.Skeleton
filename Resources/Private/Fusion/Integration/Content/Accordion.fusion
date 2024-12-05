@@ -1,8 +1,8 @@
 prototype(ISP.Skeleton:Integration.Accordion) < prototype(Neos.Fusion:Renderer) {
-    renderPath = '/container'
+    renderPath = '/skeletonContainer'
 }
 prototype(ISP.Skeleton:Integration.AccordionItem) < prototype(Neos.Fusion:Renderer) {
-    renderPath = '/item'
+    renderPath = '/skeletonItem'
 }
 
 prototype(ISP.Skeleton:Integration.Accordion.Renderer) < prototype(ISP.Skeleton:Presentation.Accordion) {
@@ -30,5 +30,5 @@ prototype(ISP.Skeleton:Integration.AccordionItem.Renderer) < prototype(ISP.Skele
     }
 }
 
-container = ISP.Skeleton:Integration.Accordion.Renderer
-item = ISP.Skeleton:Integration.AccordionItem.Renderer
+skeletonContainer = ISP.Skeleton:Integration.Accordion.Renderer
+skeletonItem = ISP.Skeleton:Integration.AccordionItem.Renderer

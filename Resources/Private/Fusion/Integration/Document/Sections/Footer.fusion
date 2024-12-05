@@ -1,5 +1,5 @@
 prototype(ISP.Skeleton:Integration.Footer) < prototype(Neos.Fusion:Renderer) {
-    renderPath = '/footer'
+    renderPath = '/skeletonFooter'
 }
 
 prototype(ISP.Skeleton:Integration.Footer.Renderer) < prototype(ISP.Skeleton:Presentation.Footer) {
@@ -15,4 +15,4 @@ prototype(ISP.Skeleton:Integration.Footer.Renderer) < prototype(ISP.Skeleton:Pre
     }
 }
 
-footer = ISP.Skeleton:Integration.Footer.Renderer
+skeletonFooter = ISP.Skeleton:Integration.Footer.Renderer
