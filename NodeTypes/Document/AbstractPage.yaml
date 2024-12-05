@@ -43,35 +43,13 @@
           'Neos.NodeTypes:Image': TRUE
           'Neos.NodeTypes.ColumnLayouts:TwoColumn': TRUE
           'Neos.NodeTypes.ColumnLayouts:ThreeColumn': TRUE
-  properties:
-    cr:
-      type: string
-      ui:
-        inlineEditable: true
-        inline:
-          editorOptions:
-            placeholder: 'Copyright © 2024 • Lorem Ipsum'
-            formatting:
-              strong: true
-              em: false
-              sub: false
-              sup: false
-              p: true
-              h1: false
-              h2: false
-              h3: false
-              h4: false
-              h5: false
-              h6: false
-              pre: false
-              underline: false
-              strikethrough: false
-              removeFormat: false
-              left: false
-              right: false
-              center: false
-              justify: false
-              table: false
-              ol: false
-              ul: false
-              a: true 
+    'credits':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'Neos.NodeTypes:Headline': TRUE
+          'Neos.NodeTypes:Text': TRUE
+          'Neos.NodeTypes:Image': TRUE
+          'Neos.NodeTypes.ColumnLayouts:TwoColumn': TRUE
+          'Neos.NodeTypes.ColumnLayouts:ThreeColumn': TRUE

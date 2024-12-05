@@ -26,7 +26,7 @@ prototype(ISP.Skeleton:Presentation.Footer) < prototype(Neos.Neos:ContentCompone
             color: var(--white-color);
         }
 
-        .copyright-text {
+        .copyright-text p{
             color: var(--section-bg-color);
             font-size: var(--copyright-font-size);
             margin-right: 30px;
@@ -55,7 +55,7 @@ prototype(ISP.Skeleton:Presentation.Footer) < prototype(Neos.Neos:ContentCompone
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <p class="copyright-text mb-0"><Neos.Neos:Editable property='cr' /></p>
+                        <div class="copyright-text mb-0">{props.credits}</div>
                     </div>
                 </div>
             </div>

@@ -9,8 +9,9 @@ prototype(ISP.Skeleton:Integration.Footer.Renderer) < prototype(ISP.Skeleton:Pre
         attributes.class = 'content'
     }
 
-    cr = Neos.Neos:Editable {
-        property = 'cr'
+    credits = Neos.Neos:ContentCollection {
+        @context.node = ${q(site).children('credits').get(0)}
+        attributes.class = 'credits'
     }
 }
 
