@@ -1,21 +1,23 @@
 prototype(ISP.Skeleton:Document.AbstractPage) < prototype(Neos.Fusion:Component) {
 
-    scripts = afx`
-        <script type="text/javascript"  @children="attributes.src">
-            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/jquery-3.7.1.min.js" />
-        </script>
-        <script type="text/javascript"  @children="attributes.src">
-            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/bootstrap.min.js" />
-        </script>
-        <script type="text/javascript"  @children="attributes.src">
-            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/jquery.sticky.js" />
-        </script>
-        <script type="text/javascript"  @children="attributes.src">
-            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/slick.min.js" />
-        </script>
-        <script type="text/javascript"  @children="attributes.src">
-            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/slider.js" />
-        </script>
+    styles = afx`
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="format-detection" content="telephone=yes" />
+        <link rel="stylesheet" type="text/css" @children="attributes.href">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/bootstrap.min.css" />
+        </link>
+        <link rel="stylesheet" type="text/css" @children="attributes.href">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/bootstrap-icons.min.css" />
+        </link>
+        <link rel="stylesheet" type="text/css" @children="attributes.href">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/slick.min.css" />
+        </link>
+        <link rel="stylesheet" type="text/css" @children="attributes.href">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/slick-theme.min.css" />
+        </link> 
+        <ISP.Skeleton:CSS />
     `
 
     layout = afx`
@@ -34,26 +36,26 @@ prototype(ISP.Skeleton:Document.AbstractPage) < prototype(Neos.Fusion:Component)
 
     `
 
+    scripts = afx`
+        <script type="text/javascript"  @children="attributes.src">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/jquery-3.7.1.min.js" />
+        </script>
+        <script type="text/javascript"  @children="attributes.src">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/bootstrap.min.js" />
+        </script>
+        <script type="text/javascript"  @children="attributes.src">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/jquery.sticky.js" />
+        </script>
+        <script type="text/javascript"  @children="attributes.src">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/slick.min.js" />
+        </script>
+        <script type="text/javascript"  @children="attributes.src">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/slider.js" />
+        </script>
+    `
+
     renderer = Neos.Neos:Page {
-        head.stylesheets = afx`
-            <meta http-equiv="x-ua-compatible" content="ie=edge" />
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-            <meta name="format-detection" content="telephone=yes" />
-            <link rel="stylesheet" type="text/css" @children="attributes.href">
-                <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/bootstrap.min.css" />
-            </link>
-            <link rel="stylesheet" type="text/css" @children="attributes.href">
-                <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/bootstrap-icons.min.css" />
-            </link>
-            <link rel="stylesheet" type="text/css" @children="attributes.href">
-                <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/slick.min.css" />
-            </link>
-            <link rel="stylesheet" type="text/css" @children="attributes.href">
-                <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/slick-theme.min.css" />
-            </link> 
-            <ISP.Skeleton:CSS />
-        `
+        head.stylesheets = ${props.styles}
         
         body = ${props.layout + props.scripts}
 

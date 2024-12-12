@@ -202,14 +202,17 @@ prototype(ISP.Skeleton:Presentation.Navbar) < prototype(Neos.Neos:ContentCompone
 
     '
 
+    staticLogo = ${StaticResource.uri('ISP.Skeleton' , 'Public/Images/logo_dummy.png', true)}
+
     renderer = afx`
         {props.integration}
         <nav class="navbar navbar-expand-lg bg-light shadow-lg">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    <img alt="Dummy-Logo" title="Home" @children="attributes.src">
-                        <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Images/logo_dummy.png" />
-                    </img>
+                    <img title="Home" 
+                        src={props.persistentLogo || props.staticLogo}
+                        alt="Logo" 
+                    />
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

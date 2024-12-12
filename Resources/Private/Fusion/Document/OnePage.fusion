@@ -1,159 +1,100 @@
-prototype(ISP.Skeleton:Document.OnePage) < prototype(Neos.Neos:Page) {
+prototype(ISP.Skeleton:Document.OnePage) < prototype(Neos.Fusion:Component) {
 
-    htmlTag = Neos.Fusion:Tag {
-        @position = 'start'
-        tagName = 'html'
-        omitClosingTag = true
-    
-        attributes {
-    
-                style = Neos.Fusion:Case {
-                    peachCon {
-                            condition = ${q(node).property('topColor') == 'peach'}
-                            renderer = ${'--primary-color: #FEBE98; --custom-btn-bg-hover-color: #FEBE08; --secondary-color: #DF7F83; --section-bg-color: #F0CFBA; --site-footer-bg-color: #F2E9D9; --custom-btn-bg-color: #F87472; p-color: #464646; border-color: #464646;'}
-                    }
-                    lavenderCon {
-                            condition = ${q(node).property('topColor') == 'lavender'}
-                            renderer = ${'--primary-color: #8A737D; --custom-btn-bg-hover-color: #8A737D; --secondary-color: #D2B0A2; --section-bg-color: #F9DBC2; --site-footer-bg-color: #D2C4C4; --custom-btn-bg-color: #9F9A7F; p-color: #33312E; border-color: #33312E;'}
-                    }
-                    coralCon {
-                            condition = ${q(node).property('topColor') == 'coral'}
-                            renderer = ${'--primary-color: #BC6266; --custom-btn-bg-hover-color: #BC6266; --secondary-color: #CE8490; --section-bg-color: #D3C4B3; --site-footer-bg-color: #E7B9AB; --custom-btn-bg-color: #D27D54; p-color: #33312E; border-color: #33312E;'}
-                    }
-                    blueCon {
-                            condition = ${q(node).property('topColor') == 'blue'}
-                            renderer = ${'--primary-color: #5B6D92; --custom-btn-bg-hover-color: #5B6D92; --secondary-color: #D5E3E6; --section-bg-color: #F0E2D2; --site-footer-bg-color: #EFEEE5; --custom-btn-bg-color: #D18266; p-color: #364042; border-color: #364042;'}
-                    }
-                    springCon {
-                            condition = ${q(node).property('topColor') == 'spring'}
-                            renderer = ${'--primary-color: #BC984E; --custom-btn-bg-hover-color: #BC984E; --secondary-color: #879681; --section-bg-color: #C3C6BF; --site-footer-bg-color: #ECE6D9; --custom-btn-bg-color: #23645C; p-color: #33312E; border-color: #33312E;'}
-                    }
-                    pinkCon {
-                            condition = ${q(node).property('topColor') == 'pink'}
-                            renderer = ${'--primary-color: #EABDC0; --custom-btn-bg-hover-color: #EABDC0; --secondary-color: #DDE4F1; --section-bg-color: #FFF4E1; --site-footer-bg-color: #F6EDEC; --custom-btn-bg-color: #7EABAC; p-color: #6B6966; border-color: #6B6966;'}
-                    }
-                }
-        }
-    }
-
-    head.stylesheets = afx`
+    styles = afx`
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="format-detection" content="telephone=yes" />
-
-        <!-- 
-        
-        TODO: css integration
-
         <link rel="stylesheet" type="text/css" @children="attributes.href">
-            <Neos.Fusion:ResourceUri package="ISP.BasicStructure" path="Styles/bootstrap.min.css" />
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/bootstrap.min.css" />
         </link>
         <link rel="stylesheet" type="text/css" @children="attributes.href">
-            <Neos.Fusion:ResourceUri package="ISP.BasicStructure" path="Styles/bootstrap-icons.css" />
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/bootstrap-icons.min.css" />
         </link>
         <link rel="stylesheet" type="text/css" @children="attributes.href">
-            <Neos.Fusion:ResourceUri package="ISP.BasicStructure" path="Styles/styles.css" />
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/slick.min.css" />
         </link>
         <link rel="stylesheet" type="text/css" @children="attributes.href">
-            <Neos.Fusion:ResourceUri package="ISP.BasicStructure" path="Styles/slick.css" />
-        </link>
-        <link rel="stylesheet" type="text/css" @children="attributes.href">
-            <Neos.Fusion:ResourceUri package="ISP.BasicStructure" path="Styles/slick-theme.css" />
-        </link>
-
-        -->    
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/slick-theme.min.css" />
+        </link> 
+        <ISP.Skeleton:CSS />
     `
 
-    body = afx`
-        <ISP.Skeleton:Integration.Header />
+    layout = afx`
 
-        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                    <ISP.Skeleton:Integration.Logo />
-                </a>
-    
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ISP.Skeleton:Integration.Navigation /> 
-                </div>
-            </div>
-        </nav>
+        <ISP.Skeleton:Integration.Header />
+        <ISP.Skeleton:Integration.Navbar />
 
         <main>
-
-            <section class="hero-section hero-section-full-height">
-                <div class="container-fluid">
-                    <div class="row">
-                        <Neos.Neos:ContentCollection nodePath='slider' />
-                    </div>
-                </div>
-            </section>
-    
-            <section class="section-padding">
-                <div class="container">
-                    <div class="row">
-                        <Neos.Neos:ContentCollection nodePath='main' />
-                    </div>
-                </div>
-            </section>
-    
-            <section class="section-padding section-bg" id="section_2">
-                <div class="container">
-                    <div class="row">
-                        <Neos.Neos:ContentCollection nodePath='content' />
-                    </div>
-                </div>
-            </section>
-    
-            <section class="about-section section-padding">
-                <div class="container">
-                    <div class="row">
-                        <Neos.Neos:ContentCollection nodePath='content2' />
-                    </div>
-                </div>
-            </section>
-    
+            <ISP.Skeleton:Integration.Hero />
+            <ISP.Skeleton:Integration.Main />
+            <ISP.Skeleton:Integration.Content />
+            <ISP.Skeleton:Integration.About />
         </main>   
+
         <ISP.Skeleton:Integration.Footer />
+
     `
 
-    body.bodyScripts = afx`
+    scripts = afx`
+        <script type="text/javascript"  @children="attributes.src">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/jquery-3.7.1.min.js" />
+        </script>
+        <script type="text/javascript"  @children="attributes.src">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/bootstrap.min.js" />
+        </script>
+        <script type="text/javascript"  @children="attributes.src">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/jquery.sticky.js" />
+        </script>
+        <script type="text/javascript"  @children="attributes.src">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/slick.min.js" />
+        </script>
+        <script type="text/javascript"  @children="attributes.src">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/slider.js" />
+        </script>
+    `
 
-    <!--        
+    renderer = Neos.Neos:Page {
+        htmlTag = Neos.Fusion:Tag {
+            @position = 'start'
+            tagName = 'html'
+            omitClosingTag = true
+        
+            attributes {
+        
+                    style = Neos.Fusion:Case {
+                        peachCon {
+                                condition = ${q(node).property('topColor') == 'peach'}
+                                renderer = ${'--primary-color: #FEBE98; --custom-btn-bg-hover-color: #FEBE08; --secondary-color: #DF7F83; --section-bg-color: #F0CFBA; --site-footer-bg-color: #F2E9D9; --custom-btn-bg-color: #F87472; p-color: #464646; border-color: #464646;'}
+                        }
+                        lavenderCon {
+                                condition = ${q(node).property('topColor') == 'lavender'}
+                                renderer = ${'--primary-color: #8A737D; --custom-btn-bg-hover-color: #8A737D; --secondary-color: #D2B0A2; --section-bg-color: #F9DBC2; --site-footer-bg-color: #D2C4C4; --custom-btn-bg-color: #9F9A7F; p-color: #33312E; border-color: #33312E;'}
+                        }
+                        coralCon {
+                                condition = ${q(node).property('topColor') == 'coral'}
+                                renderer = ${'--primary-color: #BC6266; --custom-btn-bg-hover-color: #BC6266; --secondary-color: #CE8490; --section-bg-color: #D3C4B3; --site-footer-bg-color: #E7B9AB; --custom-btn-bg-color: #D27D54; p-color: #33312E; border-color: #33312E;'}
+                        }
+                        blueCon {
+                                condition = ${q(node).property('topColor') == 'blue'}
+                                renderer = ${'--primary-color: #5B6D92; --custom-btn-bg-hover-color: #5B6D92; --secondary-color: #D5E3E6; --section-bg-color: #F0E2D2; --site-footer-bg-color: #EFEEE5; --custom-btn-bg-color: #D18266; p-color: #364042; border-color: #364042;'}
+                        }
+                        springCon {
+                                condition = ${q(node).property('topColor') == 'spring'}
+                                renderer = ${'--primary-color: #BC984E; --custom-btn-bg-hover-color: #BC984E; --secondary-color: #879681; --section-bg-color: #C3C6BF; --site-footer-bg-color: #ECE6D9; --custom-btn-bg-color: #23645C; p-color: #33312E; border-color: #33312E;'}
+                        }
+                        pinkCon {
+                                condition = ${q(node).property('topColor') == 'pink'}
+                                renderer = ${'--primary-color: #EABDC0; --custom-btn-bg-hover-color: #EABDC0; --secondary-color: #DDE4F1; --section-bg-color: #FFF4E1; --site-footer-bg-color: #F6EDEC; --custom-btn-bg-color: #7EABAC; p-color: #6B6966; border-color: #6B6966;'}
+                        }
+                    }
+            }
+        }
 
-    TODO: script integration        
+        head.stylesheets = ${props.styles}
 
-    <script type="text/javascript"  @children="attributes.src">
-        <Neos.Fusion:ResourceUri package="ISP.BasicStructure" path="JavaScript/jquery-3.6.1.min.js" />
-    </script>
-    <script type="text/javascript"  @children="attributes.src">
-        <Neos.Fusion:ResourceUri package="ISP.BasicStructure" path="JavaScript/bootstrap.min.js" />
-    </script>
-    <script type="text/javascript"  @children="attributes.src">
-        <Neos.Fusion:ResourceUri package="ISP.BasicStructure" path="JavaScript/jquery.sticky.js" />
-    </script>
-    <script type="text/javascript"  @children="attributes.src">
-        <Neos.Fusion:ResourceUri package="ISP.BasicStructure" path="JavaScript/counter.js" />
-    </script>
-    <script type="text/javascript"  @children="attributes.src">
-        <Neos.Fusion:ResourceUri package="ISP.BasicStructure" path="JavaScript/slick.min.js" />
-    </script>
-    <script type="text/javascript"  @children="attributes.src">
-        <Neos.Fusion:ResourceUri package="ISP.BasicStructure" path="JavaScript/slider.js" />
-    </script>
-    <script type="text/javascript"  @children="attributes.src">
-        <Neos.Fusion:ResourceUri package="ISP.BasicStructure" path="JavaScript/custom.js" />
-    </script>
-    <script type="text/javascript"  @children="attributes.src">
-        <Neos.Fusion:ResourceUri package="ISP.Demo" path="JavaScript/accordion.js" />
-    </script>
-    -->    
-    
-`  
+        body = ${props.layout + props.scripts}
+
+    }
 
 }

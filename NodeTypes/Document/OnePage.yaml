@@ -3,7 +3,7 @@
     'ISP.Skeleton:Document.AbstractPage': true
   constraints:
     nodeTypes:
-      '*': false
+      'Neos.Neos:Document': false
       'Neos.Neos:Shortcut': true
   ui:
     icon: file

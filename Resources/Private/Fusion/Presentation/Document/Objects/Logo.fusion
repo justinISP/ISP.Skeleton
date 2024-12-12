@@ -1,6 +1,0 @@
-prototype(ISP.Skeleton:Presentation.Logo) < prototype(Neos.Fusion:Component) {
-
-    renderer = afx`
-        <img src={props.imageSrc} width="125px" height="50px" alt="Logo" />
-    `
-}

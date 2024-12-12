@@ -2,6 +2,12 @@ prototype(ISP.Skeleton:Integration.Navbar) < prototype(Neos.Fusion:Renderer) {
     renderPath = '/skeletonNavbar'
 }
 
-prototype(ISP.Skeleton:Integration.Navbar.Renderer) < prototype(ISP.Skeleton:Presentation.Navbar)
+prototype(ISP.Skeleton:Integration.Navbar.Renderer) < prototype(ISP.Skeleton:Presentation.Navbar){
+
+    persistentLogo = Neos.Neos:ImageUri {
+        asset = ${q(node).property("logo")}
+    }
+
+}
 
 skeletonNavbar = ISP.Skeleton:Integration.Navbar.Renderer
