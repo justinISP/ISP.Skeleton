@@ -1,6 +1,6 @@
 prototype(ISP.Skeleton:Document.AbstractPage) < prototype(Neos.Fusion:Component) {
 
-    styles = afx`
+    defaultHead = afx`
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -17,10 +17,12 @@ prototype(ISP.Skeleton:Document.AbstractPage) < prototype(Neos.Fusion:Component)
         <link rel="stylesheet" type="text/css" @children="attributes.href">
             <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="Styles/slick-theme.min.css" />
         </link> 
+    `
+    skeletonStyles = afx`
+
         <ISP.Skeleton:CSS />
     `
-
-    layout = afx`
+    skeletonLayout = afx`
     
         <ISP.Skeleton:Integration.Header />
         <ISP.Skeleton:Integration.Navbar />
@@ -36,7 +38,7 @@ prototype(ISP.Skeleton:Document.AbstractPage) < prototype(Neos.Fusion:Component)
 
     `
 
-    scripts = afx`
+    skeletonScripts = afx`
         <script type="text/javascript"  @children="attributes.src">
             <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/jquery-3.7.1.min.js" />
         </script>
@@ -55,9 +57,9 @@ prototype(ISP.Skeleton:Document.AbstractPage) < prototype(Neos.Fusion:Component)
     `
 
     renderer = Neos.Neos:Page {
-        head.stylesheets = ${props.styles}
+        head.stylesheets = ${props.defaultHead + props.skeletonStyles}
         
-        body = ${props.layout + props.scripts}
+        body = ${props.skeletonLayout + props.skeletonScripts}
 
     }
 

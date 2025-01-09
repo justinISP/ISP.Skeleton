@@ -1,15 +1,21 @@
 prototype(ISP.Skeleton:Video) < prototype(Neos.Neos:ContentComponent) {
 
     video = ${q(node).property('video').resource}
+    controls = ${q(node).property('controls') == true ? 'controls' : ''}
+    muted = ${q(node).property('muted') == true ? 'muted' : ''}
+    loop = ${q(node).property('loop') == true ? 'loop' : ''}
+    autoplay = ${q(node).property('autoplay') == true ? 'autoplay' : ''}
   
+    settings = ${this.controls + ' ' + this.muted + ' ' + this.loop + ' ' + this.autoplay}
+
     renderer = afx`
 
-    <video width="100%" controls>
-        <source type="video/mp4" @children="attributes.src">
-            <Neos.Fusion:ResourceUri resource={props.video} />
-        </source>   
-        Ihr Browser unterstützt die Wiedergabe des Media-Players nicht. Um die Inhalte abzuspielen, wechseln Sie bitte Ihren Browser.
-    </video>
+        <Neos.Fusion:Tag tagName='video ' attributes={props.settings} @children="content">
+            <source type="video/mp4" @children="attributes.src">
+                <Neos.Fusion:ResourceUri resource={props.video} />
+            </source>   
+            Ihr Browser unterstützt die Wiedergabe des Media-Players nicht. Um die Inhalte abzuspielen, wechseln Sie bitte Ihren Browser.
+        </Neos.Fusion:Tag>
 
     `
   }

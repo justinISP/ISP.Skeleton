@@ -21,3 +21,40 @@
         showInCreationDialog: true 
         inspector:
           group: media
+          position: 0
+    controls:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: Videocontrol
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'media'
+          position: 1
+    autoplay:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: Autoplay
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'media'
+          position: 2
+    muted:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: Stummschalten
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'media'
+          position: 3 
+    loop:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: Loop
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'media'
+          position: 4 

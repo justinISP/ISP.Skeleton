@@ -9,6 +9,7 @@
   childNodes:
     'header':
       type: 'Neos.Neos:ContentCollection'
+      position: '10'
       constraints:
         nodeTypes:
           '*': FALSE
@@ -21,18 +22,22 @@
           'ISP.Skeleton:Carousel': TRUE
           'Neos.NodeTypes:Image': TRUE
           'Neos.NodeTypes:TextWithImage': TRUE
+      position: '20'
     'main':
       type: 'Neos.Neos:ContentCollection'
+      position: '30'
     'content':
       type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           '*': TRUE
+      position: '40'    
     'content2':
       type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           '*': TRUE
+      position: '50'    
     'footer':
       type: 'Neos.Neos:ContentCollection'
       constraints:
@@ -43,6 +48,7 @@
           'Neos.NodeTypes:Image': TRUE
           'Neos.NodeTypes.ColumnLayouts:TwoColumn': TRUE
           'Neos.NodeTypes.ColumnLayouts:ThreeColumn': TRUE
+      position: '60'    
     'credits':
       type: 'Neos.Neos:ContentCollection'
       constraints:
@@ -53,3 +59,4 @@
           'Neos.NodeTypes:Image': TRUE
           'Neos.NodeTypes.ColumnLayouts:TwoColumn': TRUE
           'Neos.NodeTypes.ColumnLayouts:ThreeColumn': TRUE
+      position: '70'    
