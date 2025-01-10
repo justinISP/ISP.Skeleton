@@ -1,10 +1,6 @@
 'Neos.NodeTypes:Text':
   properties:
     text:
-      search:
-        zinc:
-          mappingType: 'text'
-          fulltextValue: ${node.properties.text}
       ui:
         inline:
           editorOptions:
@@ -40,18 +36,10 @@
         general:
           label: General
           icon: icon-wrench
-          position: 1  
+          position: 1
   properties:
-    anchor:
-      type: string
-      ui:
-        label: Anker-ID
-        reloadIfChanged: true
-        inspector:
-          group: general
     title:
       ui:
-        inlineEditable: true
         inline:
           editorOptions:
             linking:
@@ -72,6 +60,13 @@
               center: true
               right: true
               justify: true
+    anchor:
+      type: string
+      ui:
+        label: Anker-ID
+        reloadIfChanged: true
+        inspector:
+          group: general
 'Neos.NodeTypes:TextWithImage':
   properties:
     text:

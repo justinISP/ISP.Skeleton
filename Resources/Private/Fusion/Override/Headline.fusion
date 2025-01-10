@@ -1,4 +1,4 @@
-prototype(Neos.NodeTypes:Headline) < prototype(Neos.Neos:ContentComponent) {
+prototype(Neos.NodeTypes:Headline) {
 
     anchor = ${q(node).property('anchor')}
 
