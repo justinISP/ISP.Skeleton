@@ -3,7 +3,7 @@
 #
 prototype(ISP.Skeleton:Carousel) < prototype(Neos.Neos:ContentComponent) {
 
-    identifier = ${'id-' + node.aggregateId}
+    identifier = ${'id-' + node.identifier}
 
     carouselItems = Neos.Neos:ContentCollection {
         nodePath = 'carouselitems'
