@@ -17,5 +17,7 @@ $('.tn-slider').slick({
     draggable: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    rtl: true
+    rtl: true,
+    arrows:false, 
+    dots: true
 });
