@@ -9,7 +9,7 @@ prototype(ISP.Skeleton:Carousel) < prototype(Neos.Neos:ContentComponent) {
         nodePath = 'carouselitems'
         attributes {
             class = 'tn-slider'
-            dir = 'rtl'
+            dir = 'ltr'
         }    
     }
 
