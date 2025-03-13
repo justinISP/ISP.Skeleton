@@ -3,6 +3,7 @@
     'Neos.Neos:Content': true
   ui:
     label: Video
+    icon: icon-video
     group: general
     position: 820
     inlineEditable: true
