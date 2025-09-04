@@ -1,10 +1,15 @@
-prototype(Neos.NodeTypes:Headline) {
-
-    anchor = ${q(node).property('anchor')}
-
-    renderer = afx`
-      <div {...props.attributes} id={props.anchor}>
-        <Neos.Neos:Editable property={props.title} />
-      </div>
-    `
+prototype(Neos.NodeTypes:Headline) < prototype(Neos.Neos:ContentComponent) {
+  
+  title = Neos.Neos:Editable {
+      property = 'title'
   }
+  title.@process.convertUris = Neos.Neos:ConvertUris
+
+  anchor = ${q(node).property('anchor')}
+
+  renderer = afx`
+    <div {...props.attributes} id={props.anchor}>
+      {props.title}
+    </div>
+  `
+}
