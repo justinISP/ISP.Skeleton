@@ -11,7 +11,9 @@
         "neos/nodetypes-navigation": "*",
         "neos/nodetypes": "*",
         "matthiasmullie/minify": "*",
-        "sitegeist/slipstream": "*"
+        "sitegeist/slipstream": "*",
+        "techdivision/ckstyles": "*",
+        "neos/symfonymailer": "^1.0"
     },
     "autoload": {
         "psr-4": {
