@@ -376,17 +376,17 @@ prototype(ISP.Skeleton:Presentation.CSS) < prototype(Neos.Neos:ContentComponent)
         /* Responsive Anpassungen */
         @media all and (max-width:640px) {
             [class*="columns-"] .column {
-                flex: 0 0 100%;
-                max-width: 100%;
-                padding: 10px;
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
+                padding: 10px !important;
             }
         }
 
         @media all and (max-width:480px) {
             [class*="columns-"] .column {
-                flex: 0 0 100%;
-                max-width: 100%;
-                padding: 10px 0;
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
+                padding: 10px 0 !important;
             }
         }
 
