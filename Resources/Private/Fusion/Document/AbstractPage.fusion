@@ -57,6 +57,9 @@ prototype(ISP.Skeleton:Document.AbstractPage) < prototype(Neos.Fusion:Component)
         <script type="text/javascript"  @children="attributes.src">
             <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/menu.js" />
         </script>
+        <script type="text/javascript"  @children="attributes.src">
+            <Neos.Fusion:ResourceUri package="ISP.Skeleton" path="JavaScript/accordion.js" />
+        </script>
     `
 
     renderer = Neos.Neos:Page {
