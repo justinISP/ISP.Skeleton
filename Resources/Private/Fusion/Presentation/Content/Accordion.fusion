@@ -1,6 +1,251 @@
 prototype(ISP.Skeleton:Presentation.Accordion) < prototype(Neos.Fusion:Component) {
 
+    inUse = ${q(documentNode).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof ISP.Skeleton:Accordion]').get(0)}
+    
+    integration = ${'<style data-slipstream>' + ISP.Skeleton.Minify.minifyCSS(this.styles) + '</style>'}
+    integration.@if.willBeRendered = ${this.inUse == node}
+
+    styles = '
+        /*-------------------------------------------------------------------------------*/
+        /* Accordion                                                                     */
+        /*-------------------------------------------------------------------------------*/
+        
+        .accordionFrame {
+        position: relative;
+        clear:both;
+        margin: 0px 20px 20px 0px;
+        }
+        .transition, p, ul li i:before, ul li i:after {
+        transition: all 0.25s ease-in-out;
+        }
+        
+        .accordionFrame h1, .accordionFrame h2 {
+        color: #222222;
+        margin: 20px 5px;
+        }
+        
+        .accordionFrame h1 {
+        /* text-transform: uppercase; */
+        font-size: 1em;
+        line-height: 1.25em;
+        /* letter-spacing: 2px; */
+        color: var(--primary-color);
+        font-weight: 100;
+        cursor: pointer;
+        }
+        
+        .accordionFrame h2 {
+        font-size: 1.05em;
+        line-height: 1.5em;
+        font-weight: 100;
+        display: block;
+        color: #444444;
+        margin: 0;
+        cursor: pointer;
+        }
+        .panel {
+        padding: 0 10px 0 20px;
+        background-color: #ffffff; /* #e7f5dc */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        margin-bottom: 0;
+        border: 0px solid transparent;
+        
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.06);
+        }
+        .panel .accordion-inner {
+        float:left;
+        height: auto;
+        width: 100%;
+        padding: 5px 10px 0 0;
+        }
+        .panel .accordion-inner .carousel {margin: 20px 10px 0 0;}
+        
+        .neos-backend .accordion-group .panel {
+        min-height: 100px;
+        }
+        .accordionFrame p {
+        clear:both;
+        /* color: rgba(48, 69, 92, 0.8);
+        font-size: 0.875em;
+        line-height: 1.625em;
+        letter-spacing: 1px;       */
+        position: relative;
+        overflow: hidden;
+        opacity: 1;
+        transform: translate(0, 0);
+        margin-top: 5px;
+        z-index: 2;
+        }
+        .accordion-heading i {
+        font-weight: 400;
+        max-width: 10%;
+        }
+        .accordion-headline {
+        width:95%;
+        float:left;
+        padding: 0 10px;
+        }
+        .accordionFrame .accordion-heading a {
+        color: #444;
+        text-decoration: none;
+        font-size: 1.05em;
+        display:block;
+        font-weight: 400;
+        }
+        .accordionFrame img {
+        max-width: 100%;
+        height: auto;
+        padding: 5px;
+        }
+        .accordionFrame em {
+        font-style: italic;
+        font-size: 1.0em;
+        }
+        .accordion-inner .container {
+        padding-left: 0;
+        }
+        
+        .accordion-inner .neos-nodetypes-text,
+        .accordion-inner .neos-nodetypes-textwithimage,
+        .accordion-inner .neos-nodetypes-headline {
+        padding: 15px 5px;
+        }
+        .accordion-inner .teaserpic {
+        height: auto;
+        display: table-cell;
+        min-height: 1px;
+        padding-bottom: 15px;
+        }
+        .accordion-group {
+        padding: 0;
+        margin: 0 0 10px 0;
+        height: auto;
+        width: 100%;
+        float:left;
+        margin-right: 2%;
+        /*  border-bottom: 1px solid #03989E; */
+        /*background-color: #e7f5dc;*/
+        }
+        .accordion-group:last-of-type {
+        margin-bottom:25px;
+        }
+        
+        .neos-backend .accordion-group {
+        width: 100%;
+        float:left;
+        margin-right: 0%;
+        }
+        
+        .accordion {
+        background-color: var(--primary-color);
+        color: #000;
+        cursor: pointer;
+        padding: 10px 15px 10px 5px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        transition: 0.4s;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        }
+        .accordion.active {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        }
+        .accordion-heading {
+        color:#fff;
+        font-weight: 600;
+        font-size: 1.125em;
+        }
+        button.accordion {
+        margin-bottom: 0;
+        }
+        .accordion.active i {
+        transform:rotate(91deg)
+        }
+        .accordion:hover {
+        background-color: var(--primary-color);
+        }
+        .neos-backend .accordion-group .panel {
+        min-height: 150px;
+        display: flex;
+        }
+        
+        .accordionFrame .accordion-inner .neos-nodetypes-html-html a {
+        max-width: 70px;
+        }
+        .accordionFrame .accordion-inner .neos-nodetypes-html-html a img {
+        max-width: 60px;
+        float:left;
+        }
+        .accordionFrame .accordion-group .accordion-heading:before {
+        content: "↙";
+        font-size: var(--p-font-size);
+        color: #fff;
+        }
+        .accordionFrame .accordion-group .accordion-heading.active:before {
+        content: "↗";
+        font-size: var(--p-font-size);
+        color: #fff;
+        }
+        
+        
+        @media screen and (max-width:1020px) {
+        .accordion-group {
+            width: 100%;
+            float:left;
+        }
+        }
+        
+        @media screen and (max-width:680px) {
+        .accordion-group {
+            width: 100%;
+            float:left;
+            margin-right: 0%;
+        }
+        .accordionFrame {
+            position: relative;
+            clear:both;
+            margin: 0 0 20px 0;
+        }
+        .accordionFrame .asppic {
+            padding: 10px 20px 20px 20px;
+        }
+        .accordion-group:last-of-type {
+            margin-bottom:5px;
+        }
+        }
+        
+        .accordion-group:after {
+        content:".";
+        display:block;
+        height:0;
+        font-size:0;
+        clear:both;
+        visibility:hidden;
+        }
+        
+        .accordion-toggle {
+        /*padding-left: 0.5em; */
+        }
+        .accordionFrame .accordion-toggle i {
+        margin-right: 1em;
+        font-size: 85%;
+        }
+        .accordionFrame .toggle-open i {
+        transform: rotate(90deg);
+        }
+    '
+
     renderer = afx`
+    {props.integration}
     <div class="accordionFrame" id={props.id}>
         {props.accordionItems}
     </div>
