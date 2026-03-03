@@ -7,7 +7,7 @@ prototype(ISP.Skeleton:Integration.AccordionItem) < prototype(Neos.Fusion:Render
 
 prototype(ISP.Skeleton:Integration.Accordion.Renderer) < prototype(ISP.Skeleton:Presentation.Accordion) {
 
-    id = ${node.aggregateId}
+    id = ${node.name}
 
     accordionItems = Neos.Neos:ContentCollection {
         nodePath = 'items'
@@ -16,7 +16,7 @@ prototype(ISP.Skeleton:Integration.Accordion.Renderer) < prototype(ISP.Skeleton:
 
 prototype(ISP.Skeleton:Integration.AccordionItem.Renderer) < prototype(ISP.Skeleton:Presentation.AccordionItem) {
 
-    id = ${node.aggregateId}
+    id = ${node.name}
 
     title = Neos.Neos:Editable {
         property = 'title'
