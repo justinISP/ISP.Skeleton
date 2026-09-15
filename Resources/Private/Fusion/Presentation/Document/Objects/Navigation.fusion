@@ -1,3 +1,5 @@
+// TODO Neos.Neos-20251005080230 Line 10: You very likely need to rewrite "VARIABLE.label" to "Neos.Node.label(VARIABLE)". We did not auto-apply this migration because we cannot be sure whether the variable is a Node.
+// TODO Neos.Neos-20251005080230 Line 19: You very likely need to rewrite "VARIABLE.label" to "Neos.Node.label(VARIABLE)". We did not auto-apply this migration because we cannot be sure whether the variable is a Node.
 prototype(ISP.Skeleton:Presentation.Navigation) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
