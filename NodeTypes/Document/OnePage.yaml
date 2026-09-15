@@ -1,5 +1,6 @@
 'ISP.Skeleton:Document.OnePage':
   superTypes:
+    'Neos.Neos:Site': true
     'ISP.Skeleton:Document.AbstractPage': true
   constraints:
     nodeTypes:

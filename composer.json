@@ -1,19 +1,23 @@
 {
-    "description": "",
-    "type": "neos-package",
     "name": "isp/skeleton",
+    "type": "neos-package",
+    "description": "Basispaket für ISP-Sitepackages",
+    "license": "MIT",
     "require": {
-        "neos/flow": "*",
-        "neos/nodetypes-assetlist": "*",
-        "neos/nodetypes-basemixins": "*",
-        "neos/nodetypes-contentreferences": "*",
-        "neos/nodetypes-html": "*",
-        "neos/nodetypes-navigation": "*",
-        "neos/nodetypes": "*",
+        "neos/neos": "^9.0",
+        "neos/fusion": "^9.0",
+        "neos/fusion-afx": "^9.0",
+        "neos/nodetypes": "^9.0",
+        "neos/nodetypes-assetlist": "^9.0",
+        "neos/nodetypes-basemixins": "^9.0",
+        "neos/nodetypes-columnlayouts": "^9.0",
+        "neos/nodetypes-contentreferences": "^9.0",
+        "neos/nodetypes-html": "^9.0",
+        "neos/nodetypes-navigation": "^9.0",
+        "neos/symfonymailer": "^1.0",
         "matthiasmullie/minify": "*",
         "sitegeist/slipstream": "*",
-        "techdivision/ckstyles": "*",
-        "neos/symfonymailer": "^1.0"
+        "techdivision/ckstyles": "*"
     },
     "autoload": {
         "psr-4": {
@@ -23,6 +27,9 @@
     "extra": {
         "neos": {
             "package-key": "ISP.Skeleton"
+        },
+        "branch-alias": {
+            "dev-main": "1.0.x-dev"
         }
     }
 }
